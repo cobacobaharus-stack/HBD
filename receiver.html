@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kado Ucapan Untukmu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="panel receiver" id="receiverPanel">
+      <div class="top-actions">
+        <button id="langToggle" class="lang-toggle" type="button">EN</button>
+      </div>
+
+      <p class="hero-kicker">Spesial Untukmu</p>
+      <h2 id="receiverTitle">Kamu Menerima Kado Ucapan</h2>
+      <p class="result-text">Klik kado untuk membuka surat ulang tahunnya.</p>
+
+      <button id="openGiftBtn" class="gift" aria-label="Buka kado">
+        <span class="gift-lid">
+          <span class="gift-bow"></span>
+        </span>
+        <span class="gift-ribbon-v"></span>
+        <span class="gift-ribbon-h"></span>
+        <span class="gift-box"></span>
+        <span class="gift-label">Buka Kado</span>
+      </button>
+
+      <img id="receiverMedia" class="media-preview hidden" alt="Media ucapan" loading="lazy" decoding="async" />
+      <p id="receiverMediaStatus" class="media-status"></p>
+      <section class="receiver-note hidden" id="receiverNote">
+        <p class="receiver-note-kicker" id="receiverNoteKicker">Catatan Ulang Tahun</p>
+        <h3 id="receiverNoteTitle">Sebuah pesan spesial untukmu</h3>
+        <article class="preview" id="receiverCard"></article>
+      </section>
+      <a class="back-link" href="index.html">Kembali buat ucapan</a>
+    </section>
+  </main>
+
+  <script src="receiver.js"></script>
+</body>
+</html>

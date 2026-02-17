@@ -1,0 +1,184 @@
+﻿.gift {
+  position: relative;
+  width: clamp(168px, 30vw, 205px);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin: 0 auto 14px;
+  display: block;
+  animation: giftFloat 2.6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.22));
+}
+
+.gift-box,
+.gift-lid {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+  transition: transform 0.45s ease;
+}
+
+.gift-box {
+  bottom: 24px;
+  width: 138px;
+  height: 104px;
+  background: linear-gradient(120deg, #fff 0%, #f3f3ef 60%, #e8e8e1 100%);
+  border: 2px solid #101010;
+  box-shadow: inset -8px -6px 10px rgba(0, 0, 0, 0.07);
+}
+
+.gift-lid {
+  bottom: 122px;
+  width: 146px;
+  height: 26px;
+  background: linear-gradient(120deg, #fff 0%, #f4f4ef 58%, #ecece6 100%);
+  border: 2px solid #101010;
+  box-shadow: inset -4px -3px 6px rgba(0, 0, 0, 0.08);
+  z-index: 4;
+}
+
+.gift-lid::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 100%;
+  background: linear-gradient(180deg, #f54f46 0%, #d92920 58%, #b61d16 100%);
+  border-left: 2px solid #101010;
+  border-right: 2px solid #101010;
+}
+
+.gift-ribbon-v,
+.gift-ribbon-h {
+  position: absolute;
+}
+
+.gift-bow {
+  position: absolute;
+  left: 50%;
+  top: -18px;
+  width: 18px;
+  height: 16px;
+  transform: translateX(-50%);
+  border: 2px solid #101010;
+  border-radius: 6px;
+  background: linear-gradient(130deg, #f54f46 0%, #d92920 60%, #b61d16 100%);
+  z-index: 2;
+}
+
+.gift-bow::before,
+.gift-bow::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 26px;
+  height: 18px;
+  border: 2px solid #101010;
+  border-radius: 999px 999px 999px 999px;
+  background: linear-gradient(130deg, #ff766c 0%, #e43d33 60%, #c22119 100%);
+}
+
+.gift-bow::before {
+  right: 12px;
+  transform: rotate(-18deg);
+}
+
+.gift-bow::after {
+  left: 12px;
+  transform: rotate(18deg);
+}
+
+.gift-ribbon-v {
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 98px;
+  background: linear-gradient(180deg, #f54f46 0%, #d92920 58%, #b61d16 100%);
+  border-left: 2px solid #101010;
+  border-right: 2px solid #101010;
+  box-shadow: none;
+  z-index: 2;
+}
+
+.gift-ribbon-h {
+  bottom: 72px;
+  left: 34px;
+  right: 34px;
+  height: 12px;
+  background: linear-gradient(90deg, #f54f46 0%, #d92920 58%, #b61d16 100%);
+  border-top: 2px solid #101010;
+  border-bottom: 2px solid #101010;
+  border-radius: 7px;
+  box-shadow: none;
+  z-index: 3;
+}
+
+.gift-ribbon-h::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(130deg, #f54f46 0%, #d92920 65%, #b61d16 100%);
+  border: 2px solid #101010;
+  box-shadow: none;
+}
+
+.gift-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.gift:hover .gift-lid {
+  transform: translateX(-50%) translateY(-8px) rotate(-2deg);
+}
+
+.gift.open .gift-lid {
+  transform: translateX(-50%) translateY(-26px) rotate(-8deg);
+}
+
+.gift::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  width: 126px;
+  height: 20px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.gift--classic .gift-box {
+  background: linear-gradient(120deg, #fff8de 0%, #f4e6b2 56%, #d7c07a 100%);
+}
+
+.gift--classic .gift-lid {
+  background: linear-gradient(120deg, #fff6d5 0%, #f0df9f 58%, #ceb069 100%);
+}
+
+.gift--classic .gift-ribbon-v,
+.gift--classic .gift-ribbon-h,
+.gift--classic .gift-ribbon-h::after,
+.gift--classic .gift-lid::before,
+.gift--classic .gift-bow,
+.gift--classic .gift-bow::before,
+.gift--classic .gift-bow::after {
+  background: radial-gradient(circle at 40% 35%, #f4c85c 0%, #dca22e 68%, #b78012 100%);
+}

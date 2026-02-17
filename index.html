@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buat Kado Ucapan Ulang Tahun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="top-actions">
+        <button id="langToggle" class="lang-toggle" type="button">EN</button>
+      </div>
+      <p class="hero-kicker">Birthday Card</p>
+
+      <h1>Buat Kado Ucapan Ulang Tahun</h1>
+      <p>Pilih gaya kartu, isi surat, lalu bagikan lewat link spesial berbentuk kado.</p>
+    </header>
+
+    <section class="panel" id="templatePanel">
+      <h2>1. Pilih Tema Ucapan</h2>
+      <div class="template-grid">
+        <button class="template-card" data-template="classic">
+          <span class="badge">Classic Gold</span>
+          <strong>Elegan & Formal</strong>
+          <small>Untuk sahabat, keluarga, rekan kerja</small>
+        </button>
+
+        <button class="template-card" data-template="playful">
+          <span class="badge">Playful Pop</span>
+          <strong>Ceria & Hangat</strong>
+          <small>Untuk teman dekat dan pasangan</small>
+        </button>
+
+        <button class="template-card" data-template="night">
+          <span class="badge">Midnight Glow</span>
+          <strong>Manis & Intim</strong>
+          <small>Untuk pesan personal spesial</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="formPanel">
+      <h2>2. Isi Data Ucapan</h2>
+      <form id="wishForm" class="wish-form">
+        <label>
+          Nama Pengirim
+          <input id="sender" type="text" required />
+        </label>
+
+        <label>
+          Nama Penerima
+          <input id="receiver" type="text" required />
+        </label>
+
+        <label>
+          Isi Surat
+          <textarea id="message" rows="5" required></textarea>
+        </label>
+
+        <label>
+          URL Foto/GIF (opsional)
+          <input id="mediaUrl" type="text" inputmode="url" />
+        </label>
+
+        <button id="generateLinkBtn" type="submit" class="primary-btn">Buat Link Ucapan</button>
+      </form>
+    </section>
+
+    <section class="panel hidden" id="resultPanel">
+      <h2>3. Bagikan Ucapan</h2>
+      <p class="result-text">Link ucapanmu sudah siap. Klik kado untuk menyalin link.</p>
+
+      <button id="giftButton" class="gift" aria-label="Salin link ucapan">
+        <span class="gift-lid">
+          <span class="gift-bow"></span>
+        </span>
+        <span class="gift-ribbon-v"></span>
+        <span class="gift-ribbon-h"></span>
+        <span class="gift-box"></span>
+        <span class="gift-label">Klik Kado</span>
+      </button>
+
+      <div class="link-box">
+        <input id="shareLink" type="hidden" />
+        <button id="copyBtn" type="button">Salin</button>
+      </div>
+
+      <img id="previewMedia" class="media-preview hidden" alt="Preview media ucapan" loading="lazy" decoding="async" />
+      <p id="mediaStatus" class="media-status"></p>
+      <article class="preview" id="previewCard"></article>
+      <p id="copyStatus" class="copy-status"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
